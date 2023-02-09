@@ -231,5 +231,13 @@ SLL.insertAtBack(4);
 SLL.insertAtBack(333)
 // console.log(SLL.removeBack())
 // SLL.removeBack()
-console.log(SLL.recursiveMax());
+
+console.log(SLL.contains(333));
+// console.log(SLL.contains(11));   returns false, up returns trues.
+
+// underneath returns true
+console.log(SLL.containsRecursive(333));
+// this returns false
+// console.log(SLL.containsRecursive(11));
+// console.log(SLL.recursiveMax());
 console.log(SLL.toArr());
