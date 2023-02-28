@@ -15,7 +15,10 @@ class Queue {
    * @param {any} item The new item to add to the back.
    * @returns {number} The new size of this queue.
    */
-  enqueue(item) {}
+  enqueue(item) {
+    this.items.push(item);
+    return this.size();
+  }
 
   /**
    * Removes and returns the first item of this queue.
@@ -24,7 +27,13 @@ class Queue {
    * - Space: O(1) constant.
    * @returns {any} The first item or undefined if empty.
    */
-  dequeue() {}
+  dequeue() {
+    // if(this.isEmpty){
+      // if we wanna say undefined we write null.. 1 line is enough
+    //   return null;
+    // }
+    return this.items.shift();
+  }
 
   /**
    * Retrieves the first item without removing it.
@@ -32,7 +41,9 @@ class Queue {
    * - Space: O(1) constant.
    * @returns {any} The first item or undefined if empty.
    */
-  front() {}
+  front() {
+    return this.items[0];
+  }
 
   /**
    * Returns whether or not this queue is empty.
@@ -40,7 +51,9 @@ class Queue {
    * - Space: O(1) constant.
    * @returns {boolean}
    */
-  isEmpty() {}
+  isEmpty() {
+    return this.size() === 0;
+  }
 
   /**
    * Retrieves the size of this queue.
@@ -48,7 +61,16 @@ class Queue {
    * - Space: O(1) constant.
    * @returns {number} The length.
    */
-  size() {}
+  size() {
+    return this.items.length;
+  }
 }
 
 /* Rebuild the above class using a linked list instead of an array. */
+
+const myqueue = new Queue();
+console.log(myqueue.enqueue(42));
+console.log("front: ", myqueue.front());
+console.log(myqueue.enqueue(13));
+console.log(myqueue.dequeue());
+console.log(myqueue);
