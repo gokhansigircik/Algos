@@ -71,7 +71,36 @@ class Stack {
     size() {
       return this.items.length;
     }
+
+
+     /**
+   * Logs the items of this queue.
+   * - Time: O(n) linear.
+   * - Space: O(n) linear.
+   * @returns {string} The same string that is logged.
+   */
+  print() {
+    const str = this.items.join(" ");
+    console.log(str);
+    return str;
   }
+
+  /**
+   * Compares this queue to another given queue to see if they are equal.
+   * Avoid indexing the queue items directly via bracket notation, use the
+   * queue methods instead for practice.
+   * Use no extra array or objects.
+   * The queues should be returned to their original order when done.
+   * - Time: O(n^2) quadratic, n = queue length. Quadratic due to dequeue on an
+   *     array queue being O(n).
+   * - Space: O(1) constant.
+   * @param {Queue} q2 The queue to be compared against this queue.
+   * @returns {boolean} Whether all the items of the two queues are equal and
+   *    in the same order.
+   */
+  compareQueues(q2) {}
+
+}
 
 let test = new Stack();
 test.push(1);
